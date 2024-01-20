@@ -1,12 +1,19 @@
+.containerContainer {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  gap: 3rem;
+}
 .gameContainer {
   display: flex;
   flex-direction: column;
-  width: 100%;
+  width: 15rem;
   justify-content: center;
 }
 .infoBar {
   display: flex;
   justify-content: space-between;
+
   & p {
     margin: 0;
   }
@@ -89,7 +96,32 @@
   }
 }
 
+.score {
+    font-size: 2rem;
+    margin: 0;
+}
 .textCenter {
   text-align: center;
+  padding: 0;
   margin: 0.5rem;
+}
+
+
+@media (max-width: 600px) {
+    .containerContainer{
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 0;
+    }
+   
+    .leftInfo {
+        order:1
+    }
+    .rightInfo {
+        order: 2;
+    }
+    .textCenter {
+        margin: 0.3rem;
+    }
 }

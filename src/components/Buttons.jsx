@@ -43,30 +43,30 @@ const Buttons = () => {
             setMessage("This is a tie!");
           } else if (enemyChoice === 2) {
             setMessage("You Win!");
-            setPlayerScore(prev => prev + 1)
+            setPlayerScore((prev) => prev + 1);
           } else if (enemyChoice === 3) {
             setMessage("You lose!");
-            setEnemyScore(prev => prev + 1)
+            setEnemyScore((prev) => prev + 1);
           }
           break;
         case "rock":
           if (enemyChoice === 1) {
             setMessage("You lose!");
-            setEnemyScore(prev => prev + 1)
+            setEnemyScore((prev) => prev + 1);
           } else if (enemyChoice === 2) {
             setMessage("This is a tie!");
           } else if (enemyChoice === 3) {
             setMessage("You win!");
-            setPlayerScore(prev => prev + 1)
+            setPlayerScore((prev) => prev + 1);
           }
           break;
         case "scissors":
           if (enemyChoice === 1) {
             setMessage("You win!");
-            setPlayerScore(prev => prev + 1)
+            setPlayerScore((prev) => prev + 1);
           } else if (enemyChoice === 2) {
             setMessage("You lose!");
-            setEnemyScore(prev => prev + 1)
+            setEnemyScore((prev) => prev + 1);
           } else if (enemyChoice === 3) {
             setMessage("This is a tie!");
           }
@@ -81,20 +81,22 @@ const Buttons = () => {
   }
 
   function handleReset() {
-    setMessage('')
-    setEnemy('')
-    setColor('')
-    setEnemyScore(0)
-    setPlayerScore(0)
+    setMessage("");
+    setEnemy("");
+    setColor("");
+    setEnemyScore(0);
+    setPlayerScore(0);
   }
 
   return (
-    <>
+    <section className={styles.containerContainer}>
+      <div className={`${styles.infoBar} ${styles.leftInfo}`}>
+        <p>
+          Your Score:
+          <span className={styles.score}> {playerScore}</span>
+        </p>
+      </div>
       <section className={styles.gameContainer}>
-        <div className={styles.infoBar}>
-          <p>Your Score: {playerScore}</p>
-          <p>Enemy Score: {enemyScore}</p>
-        </div>
         <div className={styles.gameButtonContainer}>
           <div className={styles.top}>
             <img
@@ -122,16 +124,22 @@ const Buttons = () => {
 
         {isLoading && <h2 className={styles.textCenter}>Loading...</h2>}
         {enemy && (
-          <h2 className={styles.textCenter}>
+          <h3 className={styles.textCenter}>
             The CPU chose <span style={{ color: color }}>{enemy}</span>
-          </h2>
+          </h3>
         )}
         {message && <h1 className={styles.textCenter}>{message}</h1>}
         <button className={styles.resetBtn} onClick={() => handleReset()}>
           RESET
         </button>
       </section>
-    </>
+      <div className={`${styles.infoBar} ${styles.rightInfo}`}>
+        <p>
+          CPU Score:
+          <span className={styles.score}> {enemyScore}</span>
+        </p>
+      </div>
+    </section>
   );
 };
 
