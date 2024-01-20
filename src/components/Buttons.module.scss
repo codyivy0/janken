@@ -1,9 +1,22 @@
+.gameContainer {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  justify-content: center;
+}
+.infoBar {
+  display: flex;
+  justify-content: space-between;
+  & p {
+    margin: 0;
+  }
+}
+
 .gameButtonContainer {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-
   background-color: #261c2c;
   padding: 1rem;
   border-radius: 10px;
@@ -37,6 +50,46 @@
   }
 }
 
+.resetBtn {
+  border: none;
+  padding: 1rem;
+  position: fixed;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 15rem;
+  color: white;
+  ////FF Style button lol
+  border: solid 1px #424542;
+  box-shadow: 1px 1px #e7dfe7, -1px -1px #e7dfe7, 1px -1px #e7dfe7,
+    -1px 1px #e7dfe7, 0 -2px #9c9a9c, -2px 0 #7b757b, 0 2px #424542;
+  background: #04009d;
+  background: -moz-linear-gradient(top, #04009d 0%, #06004d 100%);
+  background: -webkit-gradient(
+    linear,
+    left top,
+    left bottom,
+    color-stop(0%, #04009d),
+    color-stop(100%, #06004d)
+  );
+  background: -webkit-linear-gradient(top, #04009d 0%, #06004d 100%);
+  background: -o-linear-gradient(top, #04009d 0%, #06004d 100%);
+  background: -ms-linear-gradient(top, #04009d 0%, #06004d 100%);
+  background: linear-gradient(to bottom, #04009d 0%, #06004d 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#04009d', endColorstr='#06004d',GradientType=0 );
+
+  -webkit-border-radius: 7px;
+  -moz-border-radius: 7px;
+  border-radius: 7px;
+  //////
+  ///
+  &:active {
+    filter: brightness(0.8);
+    transform: translateX(-50%) scale(0.98);
+  }
+}
+
 .textCenter {
   text-align: center;
+  margin: 0.5rem;
 }
